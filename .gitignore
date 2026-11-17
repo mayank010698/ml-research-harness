@@ -1,0 +1,15 @@
+.env
+.env.*
+!.env.example
+.claude/settings.local.json
+__pycache__/
+.pytest_cache/
+*.pyc
+*.out
+*.err
+*.log
+checkpoints/
+outputs/
+data/
+wandb/
+.smoke-ok

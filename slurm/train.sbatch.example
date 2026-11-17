@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# TEMPLATE ONLY: edit partition/account/time/GPU parameters for your cluster.
+#SBATCH --job-name=nwgf-train
+#SBATCH --time=00:15:00
+#SBATCH --gres=gpu:1
+#SBATCH --cpus-per-task=4
+#SBATCH --mem=16G
+# Do not define --output or --error here unless the external absolute directories already exist.
+# Prefer: scripts/submit-slurm.sh injects --output and --error arguments.
+set -euo pipefail
+: "${OUTPUT_ROOT:?Set OUTPUT_ROOT externally}"
+: "${WANDB_PROJECT:?Set WANDB_PROJECT externally}"
+echo "job=${SLURM_JOB_ID:-unknown} commit=$(git rev-parse HEAD)"
+# Replace with project-specific command, e.g. python train.py --config configs/exp.yaml
+printf 'TEMPLATE: replace this line with a real training command before submission.\n' >&2
+exit 2
